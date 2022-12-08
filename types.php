@@ -56,8 +56,29 @@ var_dump($c);
 echo '<br><br>';
 
 /**
- * Fungsi round()
+ * Fungsi round() => pembulatan menengah, cth: 0.5 ke 1, 0.4 ke 0
  */
+echo '<h3>Fungsi round() => pembulatan menengah, cth: 0.5 ke 1, 0.4 ke 0</h3>';
+var_dump(round(0.5));
+var_dump(round(0.4));
+
+echo '<br><br>';
+
+/**
+ * Fungsi floor() => pembulatan kebawah, cth: 0.5 ke 0
+ */
+echo '<h3>Fungsi floor() => pembulatan kebawah, cth: 0.5 ke 0</h3>';
+var_dump(floor(0.5));
+
+echo '<br><br>';
+
+/**
+ * Fungsi ceil() => pembulatan keatas, cth: 0.5 ke 1
+ */
+echo '<h3>Fungsi ceil() => pembulatan keatas, cth: 0.5 ke 1</h3>';
+var_dump(ceil(0.5));
+
+echo '<br><br>';
 
 /**
  * STUDY CASE ubah inputan string/koma/negatif jadi bilangan bulat
