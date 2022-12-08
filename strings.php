@@ -69,7 +69,7 @@ var_dump($a);
 echo '<br><br>';
 
 /**
- * Mengganti karakter dari sebuah string
+ * Mengganti karakter atau kata dari sebuah string
  */
 echo '<h3>Mengganti karakter dari sebuah string</h3>';
 $kalimat = 'Concatenation adalah proses atau cara untuk menggabungkan string menjadi satu.';

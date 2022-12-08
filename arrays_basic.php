@@ -24,11 +24,6 @@ $ar2 = array(1,'a');
 var_dump($ar2);
 echo '<br>';
 
-// type casting
-$ar3 = (array)'123';
-var_dump($ar3);
-echo '<br>';
-
 echo '<br><br>';
 
 /**

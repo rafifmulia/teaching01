@@ -1,9 +1,9 @@
 <?php
+/**
+ * IF STATEMENT (conditional comparion)
+ */
 $grade = 'A';
 
-/**
- * IF STATEMENT
- */
 if ($grade === 'A') {
   echo 4.0;
 } else if ($grade === 'B') {
@@ -17,8 +17,10 @@ if ($grade === 'A') {
 echo '<br><br>';
 
 /**
- * SWITCH STATEMENT (case sensitive)
+ * SWITCH STATEMENT (strict comparion)
  */
+$grade = 'A';
+
 switch ($grade) {
   case 'a':
     echo 4.0;

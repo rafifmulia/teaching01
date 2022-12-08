@@ -27,8 +27,8 @@ function infinite_loop($start = 0) {
 }
 // infinite_loop();   // coba jalankan fungsi ini
 
-// fungsi rekursif dengan batasan tanpa mengembalikan nilai
-function kurangi_sampai_habis($start = 1, $penambah = 1, $sampai = 10) {
+// fungsi rekursif dengan batasan, tanpa mengembalikan nilai
+function tambah_sampai($start = 1, $penambah = 1, $sampai = 10) {
   echo $start.'<br>';
 
   $ditambah_jadi = $start + $penambah;
@@ -37,9 +37,9 @@ function kurangi_sampai_habis($start = 1, $penambah = 1, $sampai = 10) {
     echo 'Selesai';
     return true; // supaya berhenti
   }
-  kurangi_sampai_habis($ditambah_jadi, $penambah, $sampai);
+  tambah_sampai($ditambah_jadi, $penambah, $sampai);
 }
-// kurangi_sampai_habis();   // coba jalankan fungsi ini
+// tambah_sampai();   // coba jalankan fungsi ini
 
 
 // fungsi rekursif infinite loop dengan mengembalikan nilai
@@ -50,17 +50,17 @@ function infinite_loop2($start = 0) {
 }
 // echo infinite_loop2();   // coba jalankan fungsi ini
 
-// fungsi rekursif dengan batasan dengan mengembalikan nilai (rekursif terbalik)
-function dikurangi_sampai($start = 1, $penambah = 1, $sampai = 10) {
+// fungsi rekursif dengan batasan, dengan mengembalikan nilai (rekursif terbalik)
+function tambah_sampai_terbalik($start = 1, $penambah = 1, $sampai = 10) {
   $ditambah_jadi = $start + $penambah;
 
   if ($start > $sampai) {
     return 'Selesai'; // supaya berhenti
   }
-  echo dikurangi_sampai($ditambah_jadi, $penambah).'<br>';
+  echo tambah_sampai_terbalik($ditambah_jadi, $penambah).'<br>';
   return $start;
 }
-// echo dikurangi_sampai();   // coba jalankan fungsi ini
+echo tambah_sampai_terbalik();   // coba jalankan fungsi ini
 
 // fungsi dalam fungsi
 function tambah($a, $b) {
