@@ -2,6 +2,7 @@
 /**
  * OBJECTIVE
  * - User input password & konfirmasi password
+ * - Harus case sensitive, artinya pengaruh terhadap huruf besar dan kecil
  * - Jika password sesuai, maka echo 'sama persis'
  * - Jika password tidak sama, maka echo 'password tidak sesuai'
  */

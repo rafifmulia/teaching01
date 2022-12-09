@@ -60,7 +60,7 @@ function tambah_sampai_terbalik($start = 1, $penambah = 1, $sampai = 10) {
   echo tambah_sampai_terbalik($ditambah_jadi, $penambah).'<br>';
   return $start;
 }
-echo tambah_sampai_terbalik();   // coba jalankan fungsi ini
+// echo tambah_sampai_terbalik();   // coba jalankan fungsi ini
 
 // fungsi dalam fungsi
 function tambah($a, $b) {
@@ -72,6 +72,6 @@ function tambah($a, $b) {
 // echo tambah(2, 2);   // coba jalankan fungsi ini
 
 /**
- * STUDY CASE tampilkan bilangan genap menggunakan fungsi rekursif dengan maksimal angka 100
+ * STUDY CASE tampilkan bilangan genap menggunakan fungsi rekursif, dengan maksimal angka 100
  */
 ?>
