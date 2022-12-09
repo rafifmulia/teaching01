@@ -190,6 +190,18 @@ echo '</pre>';
 echo '<br><br>';
 
 /**
+ * Fungsi array_chunk() => membagi array menjadi beberapa bagian / dari 1 dimensi menjadi multidimensi
+ */
+echo '<h3>Fungsi array_chunk() => membagi array menjadi beberapa bagian / dari 1 dimensi menjadi multidimensi</h3>';
+$numerical = ['nol','satu','dua','tiga','empat','lima','enam','tujuh','delapan','sembilan'];
+$chunk = array_chunk($numerical, 3);
+echo '<pre>';
+var_dump($chunk);
+echo '</pre>';
+
+echo '<br><br>';
+
+/**
  * STUDY CASE
  * 1. CRUD pada array
  * 2. Manual sorting
