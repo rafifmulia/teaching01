@@ -1,0 +1,9 @@
+<html>
+  <head>
+    <title>Latihan</title>
+  </head>
+  <body>
+    <p>paragraph1</p>
+    <p>paragraph2</p>
+  </body>
+</html>
