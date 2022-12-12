@@ -1,0 +1,38 @@
+-- membuat tabel
+CREATE TABLE pengguna (id int(11), nama char(45), alamat varchar(45), diinput DATETIME, diubah DATETIME);
+
+-- menyimpan data pada spesifik kolom
+insert into pengguna (`nama`, `alamat`) values ('agung', 'jl muara agung no. 7');
+
+-- melihat isi data pada tabel
+select * from pengguna;
+
+-- contoh menyimpan data yang salah pada tipde data DATETIME
+-- insert into pengguna (`diinput`) values ('12-01-2023 07:00:00');
+
+-- menyimpan data pada pada tipe data DATETIME yang benar
+insert into pengguna (`diinput`) values ('2022-12-12');
+insert into pengguna (`diinput`) values ('2022-12-12 07:00:00');
+
+-- menyimpan data secara lengkap, mengikuti urutan kolom pada tabel
+insert into pengguna values (1, 'saka', 'jl saka raya', '2022-12-12 19:00:00', null);
+-- kalau jumlah kolomnya kurang tidak akan bisa
+-- insert into pengguna values ('saka', 'jl saka raya', '2022-12-12 19:00:00', null);
+
+-- melihat isi data spesfik kolom pada tabel
+select id, nama from pengguna;
+
+-- mengubah seluruh isi data pada satu atau banyak kolom di tabel pengguna
+update pengguna set id = 1, nama = 'rojak';
+
+-- mengubah isi data di tabel pengguna di baris(tabulasi) dengan kondisi tertentu
+update pengguna set id = 7, nama = 'juju', alamat = 'jl tujuh raya' WHERE diinput = '2022-12-12 19:00:00';
+
+-- menghapus data dengan kondisi tertentu
+delete from pengguna where id = 7;
+
+-- menghapus seluruh data
+delete from pengguna;
+
+-- membersihkan seluruh data (reset tabel)
+truncate table pengguna;

@@ -1,0 +1,65 @@
+-- menghapus tabel
+DROP TABLE pengguna;
+
+-- membuat tabel pengguna
+CREATE TABLE pengguna (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nama char(45),
+  diinput DATETIME,
+  diubah DATETIME,
+  PRIMARY KEY(id)
+);
+-- membuat tabel alamats
+CREATE TABLE alamats (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  id_pengguna int(11) NOT NULL,
+  nama_alamat varchar(45) NOT NULL,
+  kodepos varchar(45) NOT NULL,
+  alamat_lengkap varchar(125) NOT NULL,
+  dibuat DATETIME,
+  diubah DATETIME,
+  PRIMARY KEY (id),
+  -- dengan memberi nama foreign key
+  CONSTRAINT FK_alamats_pengguna FOREIGN KEY(id_pengguna) REFERENCES pengguna(id)
+  -- nama foreign key ditentukan dari mysql
+  -- FOREIGN KEY(id_pengguna) REFERENCES pengguna(id)
+);
+
+-- menambahkan pengguna baru
+insert into pengguna (`nama`, `diinput`) values ('gerald', '2022-12-12 19:00:00');
+
+-- pengguna gerald menambahkan alamat rumahnya
+insert into alamats (`id_pengguna`, `nama_alamat`, `kodepos`, `alamat_lengkap`, `dibuat`)
+values (1, 'Rumah Geralds', '12345', 'jalan gerald raya no. 7', '2022-12-12 19:00:00');
+
+-- menambahkan alamat dengan id yang tidak ada di tabel pengguna
+insert into alamats (`id_pengguna`, `nama_alamat`, `kodepos`, `alamat_lengkap`, `dibuat`)
+values (30, 'Rumah Geralds', '12345', 'jalan gerald raya no. 7', '2022-12-12 19:00:00');
+
+-- menambahkan pengguna baru, tanpa alamat
+insert into pengguna (`nama`, `diinput`) values ('liz', '2022-12-12 20:00:00');
+
+
+-- ubah foreign key agar bisa menerima data kosong
+ALTER TABLE alamats MODIFY COLUMN id_pengguna int(11) NULL;
+
+-- menambahkan alamat yang penggunanya tidak tahu siapa
+insert into alamats (`id_pengguna`, `nama_alamat`, `kodepos`, `alamat_lengkap`, `dibuat`)
+values (null, 'Alamat Hantu', '12345', 'jalan ghosting', '2022-12-12 19:00:00');
+
+-- inner join
+select * from pengguna as p INNER JOIN alamats as a ON p.id = a.id_pengguna;
+
+-- left join
+select * from pengguna as p LEFT JOIN alamats as a ON p.id = a.id_pengguna;
+
+-- right join
+select * from pengguna as p RIGHT JOIN alamats as a ON p.id = a.id_pengguna;
+
+-- full join
+select * from pengguna as p FULL OUTER JOIN alamats as a ON p.id = a.id_pengguna;
+
+-- alternatif full join
+select * from pengguna as p LEFT JOIN alamats as a ON p.id = a.id_pengguna
+UNION
+select * from pengguna as p RIGHT JOIN alamats as a ON p.id = a.id_pengguna;

@@ -1,0 +1,61 @@
+-- menghapus tabel
+DROP TABLE mahasiswa;
+
+-- membuat tabel mahasiswa
+CREATE TABLE mahasiswa (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nama char(45),
+  umur int(11),
+  kota varchar(45),
+  nilai float,
+  PRIMARY KEY(id)
+);
+
+-- menyimpan banyak data
+insert into mahasiswa (`nama`, `umur`, `kota`, `nilai`)
+values ('siska', 20, 'Jakarta Selatan', 50),
+('peter', 23, 'Jakarta Selatan', 80),
+('jaki', 21, 'Jakarta Selatan', 70),
+('rahul', 22, 'Jakarta Selatan', 70),
+('jeni', 19, 'Jakarta Selatan', 90),
+('dani', 20, 'Jakarta Selatan', 60)
+;
+
+-- kondisi where
+select * from mahasiswa WHERE nama = 'rahul';
+
+-- kondisi where and
+select * from mahasiswa where nama = 'rahul' AND nilai > 70;
+
+-- kondisi where or
+select * from mahasiswa where nama = 'rahul' OR nilai > 70;
+
+-- kondisi where in
+select nama,nilai from mahasiswa where nama IN ('rahul', 'peter');
+
+-- kondisi between
+select nama,nilai from mahasiswa where nilai between 0 and 50;
+
+-- kondisi like, mencari nama dengan akhiran i
+select * from mahasiswa where nama like '%i';
+
+-- kondisi like, mencari nama dengan awalan d
+select * from mahasiswa where nama like 'd%';
+
+-- kondisi like, mencari nama yang mempunyai abjad a
+select * from mahasiswa where nama like '%a%';
+
+-- kondisi like, mencari nama yang abjad tengahnya a
+select *,SUBSTRING(nama, 2, LENGTH(nama)-2) as abjad_tengah from mahasiswa;
+select * from mahasiswa where SUBSTRING(nama, 2, LENGTH(nama)-2) like '%a%';
+-- https://stackoverflow.com/questions/10098860/how-to-get-mid-part-of-string-in-mysql
+
+-- kondisi group by
+
+-- kondisi order by
+
+-- kondisi limit
+
+-- kondisi offset
+
+-- kondisi having

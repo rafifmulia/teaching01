@@ -1,0 +1,70 @@
+-- menghapus tabel
+DROP TABLE pengguna;
+
+-- membuat tabel dengan primary key
+CREATE TABLE pengguna (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nama char(45),
+  alamat varchar(45),
+  diinput DATETIME,
+  diubah DATETIME,
+  PRIMARY KEY(id)
+);
+
+
+
+-- menyimpan data pada spesifik kolom
+insert into pengguna (`nama`) values ('agung');
+
+-- melihat isi data dari tabel pengguna, seharusnya kolom id bernilai 1
+select * from pengguna;
+
+-- menyimpan data pada spesifik kolom dengan multiple value
+insert into pengguna (`nama`) values ('yas'), ('ibrahim');
+
+
+
+-- menghapus seluruh data
+delete from pengguna;
+
+-- menyimpan data pada spesifik kolom
+insert into pengguna (`nama`) values ('agung');
+
+-- melihat isi data dari tabel pengguna, seharusnya kolom id bernilai 4
+select * from pengguna;
+
+
+
+-- membersihkan seluruh data (reset tabel)
+truncate table pengguna;
+
+-- menyimpan data pada spesifik kolom
+insert into pengguna (`nama`) values ('agung');
+
+-- melihat isi data dari tabel pengguna, seharusnya kolom id bernilai 1
+select * from pengguna;
+
+
+
+-- mengubah kolom id tanpa auto_increment
+ALTER TABLE pengguna MODIFY COLUMN id int(11) NOT NULL;
+
+-- menyimpan data pada spesifik kolom, karena kolom id not null, maka wajib diisi
+insert into pengguna (`id`, `nama`) values (110220260, 'agung');
+
+-- menyimpan data pada spesifik kolom, karena kolom id not null, maka wajib diisi
+insert into pengguna (`id`, `nama`) values (110220260, 'agung');
+
+
+
+-- menambah kolom email dengan attribute unique setelah kolom nama
+ALTER TABLE pengguna ADD COLUMN email varchar(45) NOT NULL UNIQUE AFTER nama;
+
+-- menyimpan data pada spesifik kolom, karena kolom id dan kolom email not null, maka wajib diisi
+insert into pengguna (`id`, `nama`, `email`)
+values (1112, 'vira', 'vira@gmail.com'), (1113, 'vira', 'vira@gmail.com');
+
+-- menghapus multiple kolom
+ALTER TABLE pengguna DROP COLUMN email, DROP COLUMN diubah;
+-- menghapus satu kolom
+ALTER TABLE pengguna DROP COLUMN alamat;
