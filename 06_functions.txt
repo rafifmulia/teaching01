@@ -1,0 +1,50 @@
+-- menghapus multiple tabel
+DROP TABLE pengguna, alamats;
+
+-- membuat tabel mahasiswa
+CREATE TABLE mahasiswa (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nama char(45),
+  umur int(11),
+  kota varchar(45),
+  nilai float,
+  PRIMARY KEY(id)
+);
+
+-- menyimpan banyak data
+insert into mahasiswa (`nama`, `umur`, `kota`, `nilai`)
+values ('siska', 20, 'Jakarta Selatan', 50),
+('peter', 23, 'Jakarta Selatan', 80),
+('jaki', 21, 'Jakarta Selatan', 70),
+('rahul', 22, 'Jakarta Selatan', 70),
+('jeni', 19, 'Jakarta Selatan', 90),
+('dani', 20, 'Jakarta Selatan', 60)
+;
+
+-- count function
+select count(nama) as jumlah_mhs from mahasiswa;
+
+-- sum function
+select sum(nilai) as total_nilai from mahasiswa;
+
+-- avg function
+select avg(nilai) as nilai_rata_rata from mahasiswa;
+
+-- min function
+select min(nilai) as nilai_terkecil, nama from mahasiswa;
+
+-- mendisable strict ONLY_FULL_GROUP_BY
+select @@sql_mode;
+-- baru aktif ketika relog (login ulang)
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+-- langsung di sesi saat ini juga
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+-- max function
+select max(nilai) as nilai_terbesar, nama from mahasiswa;
+
+-- mendapatkan baris pertama / data terlama
+select * from mahasiswa limit 1;
+
+-- mendapatkan baris terakhir / data terbaru
+select * from mahasiswa order by id desc limit 1;

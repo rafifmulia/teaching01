@@ -1,0 +1,11 @@
+-- melihat daftar tabel
+SHOW TABLES;
+
+-- membuat tabel
+CREATE TABLE pengguna (id int(11), nama char(45), alamat varchar(45), diinput DATETIME, diubah DATETIME);
+
+-- melihat struktur tabel
+DESC pengguna;
+
+-- menghapus tabel
+DROP TABLE pengguna;

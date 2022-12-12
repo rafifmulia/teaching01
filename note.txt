@@ -1,0 +1,91 @@
+-- pptx
+-- https://docs.google.com/presentation/d/1sgHVkfbw_SHeWfQwbKMxRekvIwEMienf1w-kbbp86SI/edit?usp=sharing
+
+-- login mysql via cmd
+mysql -u root
+
+-- melihat database yang ada
+show databases;
+
+-- buat database
+create database toko_online;
+
+-- melihat database yang ada
+show databases;
+
+-- menghapus database
+drop database toko_online;
+
+-- menggunakan database
+use toko_online;
+
+-- melihat table
+show tables;
+
+-- membuat table pengguna
+create table pengguna(id int(11), nama char(45), alamat varchar(45), diinput DATETIME);
+
+-- melihat deskripsi struktur table
+desc pengguna;
+
+-- menghapus table
+drop table pengguna;
+
+-- menyimpan data
+insert into pengguna (`nama`, `alamat`) values ('agung', $alamat);
+
+-- melihat isi data pada table pengguna
+select * from pengguna;
+
+-- melihat isi data pada table pengguna kolom tertentu
+select nama, alamat from pengguna;
+
+-- menyimpan data pada kolom diinput
+insert into pengguna (`diinput`) values ('2022-12-12 20:00:00');
+
+-- update data pada table pengguna yang namanya agung
+update pengguna set id = 1, diinput = '2022-12-12 20:30:00' WHERE nama = 'agung';
+
+-- menghapus data pada table
+delete from pengguna where diinput = '2022-12-12 20:00:00';
+
+-- hapus table pengguna
+drop table pengguna;
+
+-- membuat table pengguna dengan primary key
+create table pengguna(id int(11) NOT NULL AUTO_INCREMENT, nama char(45), alamat varchar(45), diinput DATETIME, PRIMARY KEY (id));
+
+-- menambah data dengan nama agung
+insert into pengguna (`nama`, `alamat`) values ('agung', 'jl muara agung no. 7'); 
+
+-- menambah data dengan nama rahul
+insert into pengguna (`nama`, `alamat`) values ('rahul', 'jl muara agung no. 7'); 
+
+-- membuat table alamat dengan foreign key
+CREATE TABLE alamats (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  id_pengguna int(11) NOT NULL,
+  nama_alamat varchar(45) NOT NULL,
+  kodepos varchar(45) NOT NULL,
+  alamat_lengkap varchar(125) NOT NULL,
+  dibuat DATETIME,
+  diubah DATETIME,
+  PRIMARY KEY (id),
+  CONSTRAINT relasi_pengguna_ke_alamat FOREIGN KEY(id_pengguna) REFERENCES pengguna(id)
+);
+
+-- menambahkan pengguna baru
+insert into pengguna (`nama`, `diinput`) values ('gerald', '2022-12-12 19:00:00');
+
+-- pengguna gerald menambahkan alamat rumahnya
+insert into alamats (`id_pengguna`, `nama_alamat`, `kodepos`, `alamat_lengkap`, `dibuat`)
+values (1, 'Rumah Geralds', '12345', 'jalan gerald raya no. 7', '2022-12-12 19:00:00');
+
+-- merubah table alamat id_pengguna supaya bisa diisi NULL
+ALTER TABLE alamats MODIFY COLUMN id_pengguna int(11) NULL;
+
+-- menambahkan data pada table alamat dengan id_pengguna nya kosong
+insert into alamats (`id_pengguna`, `nama_alamat`, `kodepos`, `alamat_lengkap`, `dibuat`)
+values (null, 'Alamat Hantu', '12345', 'jalan ghosting', '2022-12-12 19:00:00');
+
+-- lanjut lagi belajar join

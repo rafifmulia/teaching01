@@ -1,0 +1,14 @@
+-- melihat seluruh database yang ada
+SHOW DATABASES;
+
+-- membuat database
+CREATE DATABASE toko_online;
+
+-- menghapus database
+DROP DATABASE toko_online;
+
+-- menggunakan database
+USE toko_online;
+
+-- melihat sedang menggunakan database yang mana
+SELECT DATABASE();
