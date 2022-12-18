@@ -39,6 +39,7 @@ if(isset($_POST['jumlah_baris'])) {
 echo '<br> <a href="sri_sulastiyani_input.php">Kembali</a>';
 
 
+// https://www.geeksforgeeks.org/php-fibonacci-series/
 // $n = 10;
 // $num1 = 0;
 // $num2 = 1;
