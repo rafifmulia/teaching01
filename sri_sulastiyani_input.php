@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <title>14</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORM</title>
 </head>
 <body>
-  <form action="sri_sulastiyani_proses.php" method="POST">
-    <table border="1">
+  <form action="sri_sulastiyani_proses2.php" method="POST">
+    <table>
       <tr>
         <td>Jumlah Baris yang akan dicetak</td>
         <td>:</td>
         <td><input type="number" name="jumlah_baris" value="0"></td>
       </tr>
-      <tr style="text-align: center;">
+      <tr>
         <td colspan="3"><button type="submit">Kirim Data</button></td>
       </tr>
     </table>

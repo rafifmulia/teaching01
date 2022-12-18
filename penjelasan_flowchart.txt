@@ -1,0 +1,49 @@
+DESKRIPSI
+membuat deret aritmatika yang bilangan hasilnya ganjil, yang dimulai dari 1 sampai baris tertentu (misalnya 20).
+
+CONTOH OUTPUT
+1 = 1
+1 + 3 = 4
+1 + 3 + 5 = 9
+...
+1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19 + 21 + 23 + 25 + 27 + 29 + 31 + 33 + 35 + 37 + 39 = 400
+
+PENJELASAN FLOWCHART
+ketika membuat flowchart pastikan membuat start dan end-nya.
+
+ketika dimulai untuk pertama kalinya, kita definisikan terlebih dahulu variable-variable yang nantinya akan dipakai di step selanjutnya.
+
+kemudian beri nilai awal untuk variable $penambah = 2, alasanya adalah karena bilangan ganjil dimulai dari 1
+jadi ketika ditambah 2 maka akan menjadi 3, 5, 7, dst..
+
+AWAL PERULANGAN KE-1
+selanjutnya kita akan membuat perulangan ke-1, supaya bisa menampilkan hingga ... baris (misalnya 20).
+variable $jumlah_baris_tersisa dimulai dari 1
+variable $deret dimulai dari 1
+
+didalam perulangan ke-1 kita beri nilai $hasil = 0, alasannya untuk mendapatkan sum(total hasil) di setiap deretnya
+
+AWAL PERULANGAN KE-2
+kemudian lakukan perulangan ke-2, untuk menampilkan deretnya
+variable $i dimulai dari 1
+variable $i bisa dikatakan adalah variable $ganjil
+
+kemudian lakukan proses penghitungan
+$hasil = $hasil + $i, untuk mendapatkan sum(total hasil) di setiap deretnya
+$i = $i + $penambah, untuk mendapatkan bilangan ganjil, misal 1 + 2 = 3, 3 + 2 = 5, 5 + 2 = 7, dst..
+
+pengecekan kondisi
+jika $i kurang dari sama dengan $deret, maka kembali ke perulangan ke-2
+jika $i lebih dari $deret, maka lanjut ke step berikutnya
+
+AKHIR PERULANGAN KE-2
+tampilkan $hasil, yaitu sum(total hasil) dari bilangan ganjil disetiap deretnya
+
+lanjut ke step berikutnya yaitu menghitung
+$jumlah_baris_tersisa -= 1, artinya $jumlah_baris_tersisa dikurang 1
+$deret = $deret + $penambah, supaya deretnya bertambah, yang tadinya ada 1 deret, jadi 2 deret, jadi 3 deret, dst..
+
+AKHIR PERULANGAN KE-1
+pengecekan kondisi
+jika $jumlah_baris_tersisa lebih dari 1, artinya masih ada baris tersisa yang belum ditampilkan, maka kembali ke perulangan ke-1
+jika $jumlah_baris_tersisa kurang dari sama dengan 1, maka program berakhir
